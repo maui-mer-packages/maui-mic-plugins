@@ -1,0 +1,26 @@
+Name        : maui-mic-plugins
+Version     : 0.1.0
+Release     : 1
+Group       : System/Base
+License     : GPLv2
+Summary     : mic plugins for Maui
+Description : |
+  mic plugins for Maui.
+URL         : https://github.com/mauios/maui-mic-plugins
+Sources     :
+    - "%{name}-%{version}.tar.xz"
+SetupOptions: -q -n %{name}-%{version}/upstream
+
+BuildArch   : noarch
+
+PkgConfigBR:
+    - python2
+Requires:
+    - mic
+
+Builder    : python
+
+Files:
+    - "%{python_sitelib}/*"
+    - "%dir %{_prefix}/lib/mic"
+    - "%{_prefix}/lib/mic/*"
